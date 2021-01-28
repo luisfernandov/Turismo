@@ -51,6 +51,7 @@
           <!-- <li><a href="team.html">Team</a></li> -->
           <li><a href="<?=base_url?>Blog/index">Blog</a></li>
           <li><a href="<?=base_url?>Contactanos/index">Contactanos</a></li>
+          <li><a href="<?=base_url?>Usuario/registro">Iniciar Sesión</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
