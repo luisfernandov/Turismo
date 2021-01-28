@@ -1,3 +1,4 @@
+<?php require_once 'views/layout/hero.php'; ?>
 <main id="main">
 
   <!-- ======= Services Section ======= -->
@@ -93,7 +94,7 @@
           </p>
           <ul>
             <li>
-              <i class="icofont-check"><a href="#">Ver más</a></i>
+              <i class="icofont-check"><a href="<?=base_url?>LugaresTuristicos/vista">Ver más</a></i>
             </li>
           </ul>
         </div>
@@ -111,7 +112,7 @@
           </p>
           <ul>
             <li>
-              <i class="icofont-check"><a href="#">Ver más</a></i>
+              <i class="icofont-check"><a href="<?=base_url?>LugaresTuristicos/vista">Ver más</a></i>
             </li>
           </ul>
         </div>
@@ -127,7 +128,7 @@
           <p>La capilla "Virgen de Guadalupe" fue construída en 1617 por orden de Jerónimo Méndez de la Piedra. Cobija la imagen de "Nuestra Señora de Guadalupe", pintada por Fray Diego de Ocaña, en 1601. El culto popular fue decorando la imagen con diferentes tipos de joyas. En 1748, el lienzo fue reforzado con una lámina de oro y plata, representando el manto de la Virgen, dejando solo los rostros de la Virgen y el niño de la pintura original. Cada año, en el mes de septiembre, se realiza una entrada folklórica en honor de la Virgen.</p>
           <ul>
             <li>
-              <i class="icofont-check"><a href="#">Ver más</a></i>
+              <i class="icofont-check"><a href="<?=base_url?>LugaresTuristicos/vista">Ver más</a></i>
             </li>
           </ul>
         </div>
@@ -145,7 +146,7 @@
           </p>
           <ul>
             <li>
-              <i class="icofont-check"><a href="#">Ver más</a></i>
+              <i class="icofont-check"><a href="<?=base_url?>LugaresTuristicos/vista">Ver más</a></i>
             </li>
           </ul>
         </div>
