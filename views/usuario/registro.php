@@ -32,7 +32,7 @@
           </ul>
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                 <div class="form-row">
 
                   <div class="col-md-6 form-group">
@@ -52,32 +52,31 @@
                 </div>
                 <br>
                 <div class="text-center"><button type="submit">Iniciar sesión</button></div>
-              </form>
+              </form> -->
             </div>
+            <!-- ========= Registros ========= --->
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                <div class="form-row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validate"></div>
+              <form action="<?=base_url?>Usuario/save" method="post" >
+                <div role="form" class="php-email-form">
+                  <div class="form-row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre"/>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input type="text" class="form-control" name="apellidos" id="apelldos" placeholder="Apellidos"/>
+                    </div>
                   </div>
-                  <div class="col-md-6 form-group">
-                    <input type="email" class="form-control" name="text" id="email" placeholder="Apellidos" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validate"></div>
+                  <div class="form-row">
+                    <div class="col-md-6 form-group">
+                      <input type="email" name="email" class="form-control" id="email" placeholder="Email"/>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña"/>
+                    </div>
                   </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6 form-group">
-                    <input type="email" name="name" class="form-control" id="name" placeholder="Email" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validate"></div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <input type="password" class="form-control" name="text" id="email" placeholder="Contraseña" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validate"></div>
-                  </div>
-                </div>
                 <br>
                 <div class="text-center"><button type="submit">Registrarce</button></div>
+                </div>
               </form>
             </div>
           </div>
