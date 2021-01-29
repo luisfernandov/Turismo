@@ -37,5 +37,49 @@ class UsuarioController{
 
   }
 
+  public function login(){
+
+    if (isset($_POST)) {
+
+      $email = isset($_POST['email']) ? $_POST['email'] : false;
+      $password = isset($_POST['password']) ? $_POST['password'] : false;
+
+      if ($email && $password) {
+        $usuario = new Usuario();
+        $usuario->setEmail($_POST['email']);
+        $usuario->setPassword($_POST['password']);
+
+        $identity = $usuario->login();
+
+        if ($identity && is_object($identity)) {
+          $_SESSION['identity'] = $identity;
+
+          // var_dump($identity);
+          // die();
+
+          if ($identity->rol == 'admin') {
+            $_SESSION['admin'] = true;
+          }
+        }else {
+          $_SESSION['error_login'] = 'Identificacion fallida';
+        }
+      }
+    }
+    header('location: '.base_url);
+  }
+
+  public function logout() {
+    if (isset($_SESSION['identity'])) {
+      unset($_SESSION['identity']);
+    }
+
+    if (isset($_SESSION['admin'])) {
+      unset($_SESSION['admin']);
+    }
+
+    header('location: '.base_url);
+
+  }
+
 
 }

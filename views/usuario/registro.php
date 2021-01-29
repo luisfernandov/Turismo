@@ -32,27 +32,20 @@
           </ul>
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-              <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                <div class="form-row">
-
-                  <div class="col-md-6 form-group">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validate"></div>
+              <form action="<?=base_url?>Usuario/login" method="post">
+                <div role="form" class="php-email-form">
+                  <div class="form-row">
+                    <div class="col-md-6 form-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email"/>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña" />
+                    </div>
                   </div>
-                  <div class="col-md-6 form-group">
-                    <input type="password" name="name" class="form-control" id="name" placeholder="Contraseña" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validate"></div>
-                  </div>
-
+                  <br>
+                  <div class="text-center"><button type="submit">Iniciar sesión</button></div>
                 </div>
-                <div class="mb-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <br>
-                <div class="text-center"><button type="submit">Iniciar sesión</button></div>
-              </form> -->
+              </form>
             </div>
             <!-- ========= Registros ========= --->
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">

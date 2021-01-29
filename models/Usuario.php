@@ -83,4 +83,30 @@ class Usuario{
     return $result;
   }
 
+  public function login() {
+    $result = false;
+    $email = $this->email;
+    $password = $this->password;
+
+    $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+    $login = $this->db->query($sql);
+
+    if ($login && $login->num_rows == 1) {
+
+      $usuario = $login->fetch_object();
+
+      // Verificar la contraseña
+
+      $verify = password_verify($password, $usuario->password);
+      // echo var_dump($verify);
+      // die();
+
+      if ($verify) {
+        $result = $usuario;
+      }
+    }
+
+    return $result;
+  }
+
 }
