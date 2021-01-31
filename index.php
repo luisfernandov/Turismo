@@ -37,5 +37,4 @@ if (class_exists($nombreControlador)) {
   show_error();
 }
 
-// require_once 'views/layout/informacion.php';
 require_once 'views/layout/footer.php';
