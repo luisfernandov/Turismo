@@ -70,6 +70,19 @@ class Usuario{
     $this->imagen = $imagen;
   }
 
+  public function verfityEmail($email) {
+    $sql = "SELECT email FROM usuarios WHERE email = '$email'";
+    $issetEmail = $this->db->query($sql);
+    $issetUser = mysqli_fetch_assoc($issetEmail);
+
+    $result = false;
+    if ($issetUser['email'] == $email) {
+      $result = true;
+    }
+
+    return $result;
+  }
+
   public function save() {
     $sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getNombre()}', '{$this->getApellidos()}', '{$this->getEmail()}', '{$this->getPassword()}', 'user', 1)";
 

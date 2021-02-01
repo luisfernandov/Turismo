@@ -16,16 +16,28 @@ class UsuarioController{
 
       if ($nombre && $apellidos && $email && $password) {
         $usuario = new Usuario();
-        $usuario->setNombre($_POST['nombre']);
-        $usuario->setApellidos($_POST['apellidos']);
-        $usuario->setEmail($_POST['email']);
-        $usuario->setPassword($_POST['password']);
 
-        $save = $usuario->save();
-        if ($save) {
-          $_SESSION['register'] = 'Complete';
+        $emailExistente = $usuario->verfityEmail($email);
+        if ($emailExistente) {
+          $_SESSION['datosRegistro'] = array(
+            "nombre" => $nombre,
+            "apellidos" => $apellidos,
+            "email" => $email
+          );
+          $_SESSION['register'] = 'errorEmail';
         }else {
-          $_SESSION['register'] = 'Failed';
+
+          $usuario->setNombre($_POST['nombre']);
+          $usuario->setApellidos($_POST['apellidos']);
+          $usuario->setEmail($_POST['email']);
+          $usuario->setPassword($_POST['password']);
+
+          $save = $usuario->save();
+          if ($save) {
+            $_SESSION['register'] = 'Complete';
+          }else {
+            $_SESSION['register'] = 'Failed';
+          }
         }
       }else {
         $_SESSION['register'] = 'Failed';
