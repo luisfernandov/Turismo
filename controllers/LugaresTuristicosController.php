@@ -12,4 +12,8 @@ class LugaresTuristicosController{
   public function vista(){
     require_once 'views/lugar/vista.php';
   }
+
+  public function administracion(){
+    require_once 'views/administracion/lugaresTuristicos.php';
+  }
 }

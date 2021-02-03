@@ -122,4 +122,62 @@ class Usuario{
     return $result;
   }
 
+  public function getAll() {
+    $sql = "SELECT * FROM usuarios ORDER BY id DESC";
+    $productos = $this->db->query($sql);
+
+    return $productos;
+  }
+
+  public function bloquearUsuario() {
+    $sql = "UPDATE usuarios SET estado = '0'";
+    $sql .= "WHERE id = {$this->getId()}";
+
+    $save = $this->db->query($sql);
+
+    $result = false;
+    if ($save) {
+      $result = true;
+    }
+
+    return $result;
+  }
+
+  public function desbloquearUsuario() {
+    $sql = "UPDATE usuarios SET estado = '1'";
+    $sql .= "WHERE id = {$this->getId()}";
+
+    $save = $this->db->query($sql);
+
+    $result = false;
+    if ($save) {
+      $result = true;
+    }
+
+    return $result;
+  }
+
+  public function getOne() {
+    $sql = "SELECT * FROM usuarios WHERE id = {$this->getId()}";
+    $producto = $this->db->query($sql);
+
+    return $producto->fetch_object();
+  }
+
+  public function edit() {
+    $sql = "UPDATE usuarios SET  nombre = '{$this->getNombre()}',
+                                 apellidos = '{$this->getApellidos()}',
+                                 rol = '{$this->getRol()}'";
+    $sql .= "WHERE id = {$this->id}";
+
+    $save = $this->db->query($sql);
+
+    $result = false;
+    if ($save) {
+      $result = true;
+    }
+
+    return $result;
+  }
+
 }
