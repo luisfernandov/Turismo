@@ -83,8 +83,10 @@
 <script src="<?=base_url?>assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="<?=base_url?>assets/vendor/aos/aos.js"></script>
 
+
 <!-- Template Main JS File -->
 <script src="<?=base_url?>assets/js/main.js"></script>
+<script src="<?=base_url?>assets/js/script.js"></script>
 
 </body>
 

@@ -7,7 +7,9 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h1 class="box-title">Lugares Turisticos <button class="btn btn-success" onclick="mostrarform(true)" id="btnagregar" name="btnagregar"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
+              <h1 class="box-title">Lugares Turisticos
+                <a class="btn btn-success" id="btnagregar" name="btnagregar" href="<?=base_url?>lugaresTuristicos/agregar" role="button"><i class="fa fa-plus-circle"></i> Agregar</a>
+              </h1>
               <div class="box-tools pull-right">
               </div>
             </div>
@@ -17,29 +19,33 @@
                 <thead>
                   <th>Opciones</th>
                   <th>Nombre</th>
-                  <th>Imagen</th>
+                  <th>Descripcion Corta</th>
+                  <th>Dirección</th>
                   <th>Fecha</th>
                   <th>Estado</th>
                 </thead>
+                <?php while ($lt = $luagarTuristico->fetch_object()) {
+                ?>
+                  <tbody>
+                    <td class="text-center"><?=$lt->estado == 1
+                        ?'<a href="'.base_url.'LugaresTuristicos/desactivarLugarTuristico&id='.$lt->id.'" class="btn bg-danger text-white boton " data-placement="top" data-toggle="tooltip" title="Desactivar Lugar Turistico"><em class="fa fa-trash"></em></a>
+                        <a href="'.base_url.'LugaresTuristicos/editarLugarTuristico&id='.$lt->id.'" class="btn bg-success text-white boton " data-placement="top" data-toggle="tooltip" title="Editar Lugar Turistico"><em class="fa fa-paint-brush"></em></a>'
+                        :'<a href="'.base_url.'LugaresTuristicos/activarLugarTuristico&id='.$lt->id.'" class="btn bg-warning text-white boton" title="Activar Lugar turistico"><em class="fa fa-check""></em></a>
+                        <a href="'.base_url.'LugaresTuristicos/editarLugarTuristico&id='.$lt->id.'" class="btn bg-success text-white boton " data-placement="top" data-toggle="tooltip" title="Editar Lugar Turistico"><em class="fa fa-paint-brush"></em></a>'
 
-                <tbody>
-                  <td>1</td>
-                  <td>Fernando</td>
-                  <td>img.jpg</td>
-                  <td>12-01-2021</td>
-                  <td>activo</td>
-                </tbody>
-                <tbody>
-                  <td>1</td>
-                  <td>Fernando</td>
-                  <td>img.jpg</td>
-                  <td>12-01-2021</td>
-                  <td>activo</td>
-                </tbody>
+                        ?></td>
+                    <td><?=$lt->nombre?></td>
+                    <td><?=$lt->descripcion_corta?></td>
+                    <td><?=$lt->direccion?></td>
+                    <td><?=$lt->fecha?></td>
+                    <td><?=$lt->estado == 1 ? '<p class="text-success">Activo</p>' : '<p class="text-danger">No Activo</p>'?></td>
+                  </tbody>
+                <?php } ?>
                 <tfoot>
                   <th>Opciones</th>
                   <th>Nombre</th>
-                  <th>Imagen</th>
+                  <th>Descripcion Corta</th>
+                  <th>Dirección</th>
                   <th>Fecha</th>
                   <th>Estado</th>
                 </tfoot>
