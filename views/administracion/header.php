@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="<?=base_url?>assets/adminlte/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=base_url?>assets/adminlte/css/adminlte.min.css">
+  <!-- style -->
+  <link rel="stylesheet" href="<?=base_url?>assets/adminlte/css/style.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -22,7 +24,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="<?=base_url?>" class="nav-link">Home</a>
       </li>
     </ul>
     <br><br><br>

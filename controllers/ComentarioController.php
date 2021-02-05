@@ -34,5 +34,49 @@ class ComentarioController{
     header('location: '.base_url.'LugaresTuristicos/vista&token='.$lt->token);
   }
 
+  public function administrar(){
+
+        if (isset($_GET['token'])) {
+
+          $token = $_GET['token'];
+
+          $comentario = new Comentario();
+
+          $coment = $comentario->getAll($token);
+          $titulo = strtr($token, "_", " ");
+
+          require_once 'views/administracion/comentarios.php';
+        }
+
+  }
+
+
+  public function bloquearComentario() {
+    Utils::isAdmin();
+
+    if (isset($_GET['id'])) {
+      $id = $_GET['id'];
+      $token = $_GET['token'];
+
+      $comentario = new Comentario();
+      $comentario->setId($id);
+      $comentario->bloquearComentario();
+    }
+    header('location: '.base_url.'Comentario/administrar&token='.$token);
+  }
+
+  public function desbloquearComentario() {
+    Utils::isAdmin();
+
+    if (isset($_GET['id'])) {
+      $id = $_GET['id'];
+      $token = $_GET['token'];
+
+      $comentario = new Comentario();
+      $comentario->setId($id);
+      $comentario->desbloquearComentario();
+    }
+    header('location: '.base_url.'Comentario/administrar&token='.$token);
+  }
 
 }

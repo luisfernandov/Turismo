@@ -72,7 +72,7 @@ class Comentario{
   }
 
   public function getAll($token) {
-    $sql = "SELECT clt.comentario, clt.fecha, clt.estado, clt.lugares_turisticos_id, u.nombre, lt.token
+    $sql = "SELECT clt.id, clt.comentario, clt.fecha, clt.estado, clt.lugares_turisticos_id, u.nombre, lt.token
             FROM comentarios_lugares_turisticos as clt
             INNER JOIN lugares_turisticos as lt
             ON clt.lugares_turisticos_id = lt.id
@@ -94,6 +94,34 @@ class Comentario{
     $comentario = $this->db->query($sql);
 
     return $comentario->fetch_object();
+  }
+
+  public function bloquearComentario(){
+    $sql = "UPDATE comentarios_lugares_turisticos SET estado = '0'";
+    $sql .= "WHERE id = {$this->getId()}";
+
+    $save = $this->db->query($sql);
+
+    $result = false;
+    if ($save) {
+      $result = true;
+    }
+
+    return $result;
+  }
+
+  public function desbloquearComentario() {
+    $sql = "UPDATE comentarios_lugares_turisticos SET estado = '1'";
+    $sql .= "WHERE id = {$this->getId()}";
+
+    $save = $this->db->query($sql);
+
+    $result = false;
+    if ($save) {
+      $result = true;
+    }
+
+    return $result;
   }
 
 }

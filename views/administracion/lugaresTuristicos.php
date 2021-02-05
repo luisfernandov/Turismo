@@ -22,6 +22,7 @@
                   <th>Descripcion Corta</th>
                   <th>Dirección</th>
                   <th>Fecha</th>
+                  <th>Comentarios</th>
                   <th>Estado</th>
                 </thead>
                 <?php while ($lt = $luagarTuristico->fetch_object()) {
@@ -29,7 +30,8 @@
                   <tbody>
                     <td class="text-center"><?=$lt->estado == 1
                         ?'<a href="'.base_url.'LugaresTuristicos/desactivarLugarTuristico&id='.$lt->id.'" class="btn bg-danger text-white boton " data-placement="top" data-toggle="tooltip" title="Desactivar Lugar Turistico"><em class="fa fa-trash"></em></a>
-                        <a href="'.base_url.'LugaresTuristicos/editarLugarTuristico&id='.$lt->id.'" class="btn bg-success text-white boton " data-placement="top" data-toggle="tooltip" title="Editar Lugar Turistico"><em class="fa fa-paint-brush"></em></a>'
+                        <a href="'.base_url.'LugaresTuristicos/editarLugarTuristico&id='.$lt->id.'" class="btn bg-success text-white boton " data-placement="top" data-toggle="tooltip" title="Editar Lugar Turistico"><em class="fa fa-paint-brush"></em></a>
+                        <a href="'.base_url.'Comentario/administrar&token='.$lt->token.'" class="btn bg-info text-white boton " data-placement="top" data-toggle="tooltip" title="Ver los Comentarios"><em class="fa fa-comments"></em></a>'
                         :'<a href="'.base_url.'LugaresTuristicos/activarLugarTuristico&id='.$lt->id.'" class="btn bg-warning text-white boton" title="Activar Lugar turistico"><em class="fa fa-check""></em></a>
                         <a href="'.base_url.'LugaresTuristicos/editarLugarTuristico&id='.$lt->id.'" class="btn bg-success text-white boton " data-placement="top" data-toggle="tooltip" title="Editar Lugar Turistico"><em class="fa fa-paint-brush"></em></a>'
 
@@ -38,6 +40,7 @@
                     <td><?=$lt->descripcion_corta?></td>
                     <td><?=$lt->direccion?></td>
                     <td><?=$lt->fecha?></td>
+                    <td>3 Comentarios</td>
                     <td><?=$lt->estado == 1 ? '<p class="text-success">Activo</p>' : '<p class="text-danger">No Activo</p>'?></td>
                   </tbody>
                 <?php } ?>
@@ -47,6 +50,7 @@
                   <th>Descripcion Corta</th>
                   <th>Dirección</th>
                   <th>Fecha</th>
+                  <th>Comentarios</th>
                   <th>Estado</th>
                 </tfoot>
               </table>
