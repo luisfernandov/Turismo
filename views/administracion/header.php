@@ -68,6 +68,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?=base_url?>Suscriptores/administrar" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Suscriptores
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

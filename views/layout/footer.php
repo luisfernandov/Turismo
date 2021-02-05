@@ -9,7 +9,7 @@
           <p>Ingresa tu correo y reciviras semanalmente la revista de nuestra facultad</p>
         </div>
         <div class="col-lg-6">
-          <form action="" method="post">
+          <form action="<?=base_url?>Suscriptores/save" method="post">
             <input type="email" name="email"><input type="submit" value="Suscribirme">
           </form>
         </div>
