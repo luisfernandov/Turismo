@@ -59,7 +59,7 @@
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <label>Ubicación(*): </label>
-                    <input type="text" class="form-control" name="ubicacion" id="direccion" maxlength="150" placeholder="Ubicacion" required value="<?=isset($lt) && is_object($lt) ? $lt->ubicacion : ''?>">
+                    <input type="text" class="form-control" name="ubicacion" id="direccion"  placeholder="Ubicacion" required value="<?=isset($lt) && is_object($lt) ? $lt->ubicacion : ''?>">
                   </div>
                 </div>
                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">

@@ -165,6 +165,13 @@ class LugarTuristico{
     return $luagar_turistico->fetch_object();
   }
 
+  public function getOneToken(){
+    $sql = "SELECT * FROM lugares_turisticos WHERE token = '{$this->getToken()}'";
+    $luagar_turistico = $this->db->query($sql);
+
+    return $luagar_turistico->fetch_object();
+  }
+
   public function desactivarLugarTuristico(){
     $sql = "UPDATE lugares_turisticos SET estado = '0'";
     $sql .= "WHERE id = '{$this->getId()}'";

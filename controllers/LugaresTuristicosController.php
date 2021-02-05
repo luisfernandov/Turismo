@@ -1,6 +1,7 @@
 <?php
 
 require_once 'models/LugarTuristico.php';
+require_once 'models/Comentario.php';
 class LugaresTuristicosController{
 
   public function index(){
@@ -8,11 +9,36 @@ class LugaresTuristicosController{
   }
 
   public function lista(){
+
+    $luagarTuristico = new LugarTuristico();
+    $luagarTuristico = $luagarTuristico->getAll();
     require_once 'views/lugar/lugaresTur.php';
   }
 
   public function vista(){
-    require_once 'views/lugar/vista.php';
+
+    if (isset($_GET['token'])) {
+
+      $token = $_GET['token'];
+
+      $lugarTuristico = new LugarTuristico();
+      $lugarTuristico->setToken($token);
+
+      $lt = $lugarTuristico->getOneToken();
+
+      $comentario = new Comentario();
+
+      $coment = $comentario->getAll($token);
+
+      $cm = new Comentario();
+      $count = $cm->count($token);
+
+
+
+      require_once 'views/lugar/vista.php';
+    }else {
+      header('location: '.base_url.'LugaresTuristicos/lista');
+    }
   }
 
   public function administracion(){
@@ -29,7 +55,7 @@ class LugaresTuristicosController{
   }
 
   public function save(){
-    Utils::isAdmin();
+    Utils::isIdentity();
 
     if (isset($_POST)) {
       $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
@@ -109,7 +135,7 @@ class LugaresTuristicosController{
 
       require_once 'views/administracion/agregarLugarTuristico.php';
     }else {
-      header('location: '.base_url.'Producto/gestion');
+      header('location: '.base_url.'LugaresTuristicos/administracion');
     }
   }
 
