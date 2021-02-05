@@ -41,7 +41,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">BIENVENIDO  <?=$_SESSION['identity']->nombre?> <?=$_SESSION['identity']->apellidos?></a>
         </div>
       </div>
 
@@ -52,27 +52,49 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="<?=base_url?>Usuario/administracion" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fa fa-folder-open"></i>
+              <p>
+                Mis publicaciones
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=base_url?>Usuario/administracion" class="nav-link">
+              <i class="nav-icon fa fa-user-circle"></i>
+              <p>
+                Mi perfil
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=base_url?>Usuario/administracion" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
               <p>
                 Usuarios
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?=base_url?>LugaresTuristicos/administracion" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fa fa-cubes"></i>
               <p>
                 Lugares Turisticos
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?=base_url?>Suscriptores/administrar" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fa fa-address-book"></i>
               <p>
                 Suscriptores
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=base_url?>Usuario/administracion" class="nav-link">
+              <i class="nav-icon fa fa-window-close"></i>
+              <p>
+                Salir
               </p>
             </a>
           </li>

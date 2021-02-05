@@ -27,9 +27,9 @@
                   <tbody>
                     <td class="text-center"><?=$us->estado == 1
                         ?'<a href="'.base_url.'Usuario/bloquearUsuario&id='.$us->id.'" class="btn bg-danger text-white boton " data-placement="top" data-toggle="tooltip" title="Bloquear Usuario"><em class="fa fa-ban"></em></a>
-                        <a href="'.base_url.'Usuario/editarUsuario&id='.$us->id.'" class="btn bg-success text-white boton " data-placement="top" data-toggle="tooltip" title="Editar Usuario"><em class="fa fa-undo"></em></a>'
+                        <a href="'.base_url.'Usuario/editarUsuario&id='.$us->id.'" class="btn bg-success text-white boton " data-placement="top" data-toggle="tooltip" title="Editar Usuario"><em class="fa fa-paint-brush"></em></a>'
                         :'<a href="'.base_url.'Usuario/desbloquearUsuario&id='.$us->id.'" class="btn bg-warning text-white boton" title="Desbloquear Usuario"><em class="fa fa-unlock-alt""></em></a>
-                        <a href="'.base_url.'Usuario/editarUsuario&id='.$us->id.'" class="btn bg-success text-white boton " data-placement="top" data-toggle="tooltip" title="Editar Usuario"><em class="fa fa-undo"></em></a>'
+                        <a href="'.base_url.'Usuario/editarUsuario&id='.$us->id.'" class="btn bg-success text-white boton " data-placement="top" data-toggle="tooltip" title="Editar Usuario"><em class="fa fa-paint-brush"></em></a>'
 
                         ?></td>
                     <td><?=$us->nombre ?></td>
