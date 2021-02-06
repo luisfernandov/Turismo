@@ -51,7 +51,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="<?=base_url?>Usuario/administracion" class="nav-link">
+            <a href="<?=base_url?>Blog/misPublicaciones" class="nav-link">
               <i class="nav-icon fa fa-folder-open"></i>
               <p>
                 Mis publicaciones
@@ -59,7 +59,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=base_url?>Usuario/administracion" class="nav-link">
+            <a href="<?=base_url?>Usuario/miPerfil" class="nav-link">
               <i class="nav-icon fa fa-user-circle"></i>
               <p>
                 Mi perfil
@@ -91,7 +91,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=base_url?>Usuario/administracion" class="nav-link">
+            <a href="<?=base_url?>Usuario/logout" class="nav-link">
               <i class="nav-icon fa fa-window-close"></i>
               <p>
                 Salir

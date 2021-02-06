@@ -48,3 +48,32 @@ CREATE TABLE comentarios_lugares_turisticos(
   CONSTRAINT pk_comentarios_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id),
   CONSTRAINT pk_coemntario_lugar_turistico FOREIGN KEY(lugares_turisticos_id) REFERENCES lugares_turisticos(id)
 )ENGINE=InnoDb;
+
+
+CREATE TABLE blog(
+id              int(11) auto_increment not null,
+usuario_id      int(11) not null,
+categoria_id    int(11) not null,
+titulo          varchar(100) not null,
+descripcion     text not null,
+imagen          varchar(100) not null,
+token           varchar (100) not null,
+fecha           date not null,
+estado          boolean not null,
+CONSTRAINT pk_blog PRIMARY KEY(id),
+CONSTRAINT pk_blog_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id),
+CONSTRAINT pk_blog_categoria FOREIGN KEY(categoria_id) REFERENCES categorias(id),
+CONSTRAINT uq_token UNIQUE(token)
+)ENGINE=InnoDb;
+
+CREATE TABLE comentarios_blog(
+  id            int(11) auto_increment not null,
+  usuario_id    int(11) not null,
+  blog_id       int(11) not null,
+  comentario    text not null,
+  fecha         date not null,
+  estado        boolean not null,
+  CONSTRAINT pk_comentarios_blog PRIMARY KEY(id),
+  CONSTRAINT pk_comentarios_blog_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id),
+  CONSTRAINT pk_coemntario_posts FOREIGN KEY(blog_id) REFERENCES blog(id)
+)ENGINE=InnoDb;

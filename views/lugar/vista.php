@@ -132,7 +132,7 @@
               <div class="reply-form">
                 <h4>Deja tu comentario</h4>
                 <?php if(!isset($_SESSION['identity'])){?>
-                  <p>Para poder comentar este articulo debes <a href="#">iniciar sesion </a></p>
+                  <p>Para poder comentar este articulo debes <a href="<?=base_url?>Usuario/registro">iniciar sesion </a></p>
                 <?php } if (isset($_SESSION['identity'])) {
                   ?>
                   <form action="<?=base_url?>Comentario/save" method="post">

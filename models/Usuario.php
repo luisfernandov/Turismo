@@ -180,4 +180,19 @@ class Usuario{
     return $result;
   }
 
+  public function editPerfil(){
+    $sql = "UPDATE usuarios SET  nombre = '{$this->getNombre()}',
+                                 apellidos = '{$this->getApellidos()}'";
+    $sql .= "WHERE id = {$this->id}";
+
+    $save = $this->db->query($sql);
+
+    $result = false;
+    if ($save) {
+      $result = true;
+    }
+
+    return $result;
+  }
+
 }

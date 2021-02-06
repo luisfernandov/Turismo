@@ -177,6 +177,45 @@ class UsuarioController{
     header('location: '.base_url.'Usuario/administracion');
   }
 
+  public function miPerfil(){
+    Utils::isIdentity();
 
+    require_once 'views/administracion/miPerfil.php';
+  }
+
+  public function editPerfil(){
+    Utils::isIdentity();
+    if (isset($_POST)) {
+      $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
+      $apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : false;
+      // $rol = isset($_POST['rol']) ? $_POST['rol'] : false;
+      // $email = isset($_POST['email']) ? $_POST['email'] : false;
+      $id = isset($_POST['id']) ? $_POST['id'] : false;
+
+      if ($nombre && $apellidos && $id) {
+
+        $usuario = new Usuario();
+
+        $usuario->setNombre($nombre);
+        $usuario->setApellidos($apellidos);
+        // $usuario->setEmail($_POST['email']);
+        $usuario->setId($id);
+
+        $save = $usuario->editPerfil();
+        if ($save) {
+          $_SESSION['register'] = 'Complete';
+          $_SESSION['identity']->nombre = $nombre;
+          $_SESSION['identity']->apellidos = $apellidos; 
+        }else {
+          $_SESSION['register'] = 'Failed';
+        }
+      }else {
+        $_SESSION['register'] = 'Failed';
+      }
+    }else {
+      $_SESSION['register'] = 'Failed';
+    }
+    header("location: ".base_url.'Usuario/miPerfil');
+  }
 
 }

@@ -10,7 +10,7 @@
           <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li>Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia reiciendis</li>
+            <li><?=$blog->titulo ?></li>
           </ol>
         </div>
 
@@ -27,72 +27,28 @@
 
             <article class="entry entry-single">
               <div class="entry-img">
-                <img src="<?=base_url?>assets/img/blog-post-1.jpg" alt="" class="img-fluid">
+                <img src="<?=base_url?>uploads/images/blog/<?=$blog->imagen ?>" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia reiciendis</a>
+                <a href="blog-single.html"><?=$blog->titulo ?></a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html"><?=$blog->nombre ?></a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01"><?=$blog->fecha ?></time></a></li>
                   <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li>
                 </ul>
               </div>
 
               <div class="entry-content">
                 <p>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et
-                  laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos
-                  aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
+                  <?=$blog->descripcion ?>
                 </p>
-
-                <p>
-                  Sit repellat hic cupiditate hic ut nemo. Quis nihil sunt non reiciendis. Sequi in accusamus harum vel
-                  aspernatur. Excepturi numquam nihil cumque odio. Et voluptate cupiditate.
-                </p>
-
-                <p>
-                  Sed quo laboriosam qui architecto. Occaecati repellendus omnis dicta inventore tempore provident
-                  voluptas mollitia aliquid. Id repellendus quia. Asperiores nihil magni dicta est suscipit perspiciatis.
-                  Voluptate ex rerum assumenda dolores nihil quaerat.
-                  Dolor porro tempora et quibusdam voluptas. Beatae aut at ad qui tempore corrupti velit quisquam rerum.
-                  Omnis dolorum exercitationem harum qui qui blanditiis neque.
-                  Iusto autem itaque. Repudiandae hic quae aspernatur ea neque qui. Architecto voluptatem magni. Vel
-                  magnam quod et tempora deleniti error rerum nihil tempora.
-                </p>
-
-                <h3>Et quae iure vel ut odit alias.</h3>
-                <p>
-                  Officiis animi maxime nulla quo et harum eum quis a. Sit hic in qui quos fugit ut rerum atque. Optio
-                  provident dolores atque voluptatem rem excepturi molestiae qui. Voluptatem laborum omnis ullam quibusdam
-                  perspiciatis nulla nostrum. Voluptatum est libero eum nesciunt aliquid qui.
-                  Quia et suscipit non sequi. Maxime sed odit. Beatae nesciunt nesciunt accusamus quia aut ratione
-                  aspernatur dolor. Sint harum eveniet dicta exercitationem minima. Exercitationem omnis asperiores natus
-                  aperiam dolor consequatur id ex sed. Quibusdam rerum dolores sint consequatur quidem ea.
-                  Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam
-                  voluptatem voluptatem accusamus mollitia aut atque aut.
-                </p>
-
               </div>
 
               <div class="entry-footer clearfix">
-                <div class="float-left">
-                  <i class="icofont-folder"></i>
-                  <ul class="cats">
-                    <li><a href="#">Business</a></li>
-                  </ul>
-
-                  <i class="icofont-tags"></i>
-                  <ul class="tags">
-                    <li><a href="#">Creative</a></li>
-                    <li><a href="#">Tips</a></li>
-                    <li><a href="#">Marketing</a></li>
-                  </ul>
-                </div>
 
                 <div class="float-right share">
                   <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
@@ -178,43 +134,29 @@
               <h3 class="sidebar-title">Categorias</h3>
               <div class="sidebar-item categories">
                 <ul>
-                  <li><a href="#">Lugares Turisticos <span>(25)</span></a></li>
-                  <li><a href="#">Fiestas Patronales <span>(12)</span></a></li>
+                  <?php $categorias = Utils::showCategorias(); ?>
+                  <?php
+                    while ($cat = $categorias->fetch_object()) {
+                      if ($cat->estado == 1) {
+                  ?>
+                      <li><a href="#"><?=$cat->nombre ?> <span>(25)</span></a></li>
+                  <?php }} ?>
                 </ul>
 
               </div><!-- End sidebar categories-->
 
               <h3 class="sidebar-title">Posts Recientes</h3>
               <div class="sidebar-item recent-posts">
-                <div class="post-item clearfix">
-                  <img src="<?=base_url?>assets/img/recent-posts-1.jpg" alt="">
-                  <h4><a href="<?=base_url?>Blog/vista">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="<?=base_url?>assets/img/recent-posts-2.jpg" alt="">
-                  <h4><a href="<?=base_url?>Blog/vista">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="<?=base_url?>assets/img/recent-posts-3.jpg" alt="">
-                  <h4><a href="<?=base_url?>Blog/vista">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="<?=base_url?>assets/img/recent-posts-4.jpg" alt="">
-                  <h4><a href="<?=base_url?>Blog/vista">Laborum corporis quo dara net para</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="<?=base_url?>assets/img/recent-posts-5.jpg" alt="">
-                  <h4><a href="<?=base_url?>Blog/vista">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
+                <?php while ($p = $post->fetch_object()) {
+                ?>
+                  <div class="post-item clearfix">
+                    <img src="<?=base_url?>uploads/images/blog/<?=$p->imagen ?>" alt="">
+                    <h4><a href="<?=base_url?>Blog/vista"><?=$p->titulo ?></a></h4>
+                    <time datetime="2020-01-01"><?=$p->fecha ?></time>
+                  </div>
+                <?php
+                }
+                ?>
               </div><!-- End sidebar recent posts-->
 
             </div><!-- End sidebar -->
