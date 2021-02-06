@@ -6,6 +6,9 @@ class BlogController{
   public function index(){
     $blog = new Blog();
     $blog = $blog->getAll();
+
+    $post = new Blog();
+    $post = $post->getAll();
     require_once 'views/blog/home.php';
   }
 
@@ -30,6 +33,7 @@ class BlogController{
   }
 
   public function misPublicaciones(){
+    Utils::isIdentity();
     $usuario_id = $_SESSION['identity']->id;
     $blog = new Blog();
     $blog->setUsuario_id($usuario_id);
@@ -38,6 +42,7 @@ class BlogController{
   }
 
   public function crear(){
+    Utils::isIdentity();
     require_once 'views/administracion/crearPost.php';
   }
 

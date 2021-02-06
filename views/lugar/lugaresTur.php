@@ -30,7 +30,7 @@
                 <div class="card-body">
                   <h5 class="card-title"><a href="<?=base_url?>LugaresTuristicos/vista&token=<?=$lt->token?>"><?=$lt->nombre ?></a></h5>
                   <p class="card-text"><?=substr($lt->descripcion_corta, 0, 100)?>...</p>
-                  <div class="read-more"><a href="<?=base_url?>LugaresTuristicos/vista"><i class="icofont-arrow-right"></i> Ler más</a></div>
+                  <div class="read-more"><a href="<?=base_url?>LugaresTuristicos/vista&token=<?=$lt->token?>"><i class="icofont-arrow-right"></i> Ler más</a></div>
                 </div>
               </div>
             </div>

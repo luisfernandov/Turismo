@@ -5,6 +5,9 @@ require_once 'models/Comentario.php';
 class LugaresTuristicosController{
 
   public function index(){
+    $lugarTuristico = new LugarTuristico();
+    $lugarTuristico = $lugarTuristico->getRandom(4);
+
     require_once 'views/lugar/index.php';
   }
 

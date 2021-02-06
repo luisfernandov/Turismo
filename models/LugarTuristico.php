@@ -165,6 +165,13 @@ class LugarTuristico{
     return $luagar_turistico->fetch_object();
   }
 
+  public function getRandom($limit) {
+    $sql = "SELECT * FROM lugares_turisticos ORDER BY RAND() LIMIT $limit";
+    $luagar_turistico = $this->db->query($sql);
+
+    return $luagar_turistico;
+  }
+
   public function getOneToken(){
     $sql = "SELECT * FROM lugares_turisticos WHERE token = '{$this->getToken()}'";
     $luagar_turistico = $this->db->query($sql);

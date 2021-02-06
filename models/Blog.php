@@ -141,7 +141,7 @@ class Blog{
     $sql = "SELECT * FROM blog as bg
             INNER JOIN usuarios as us
             ON bg.usuario_id = us.id
-            ORDER BY fecha DESC";
+            ORDER BY bg.fecha DESC";
     $blog = $this->db->query($sql);
 
     return $blog;
