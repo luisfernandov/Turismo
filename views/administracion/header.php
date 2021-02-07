@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="<?=base_url?>assets/adminlte/css/adminlte.min.css">
   <!-- style -->
   <link rel="stylesheet" href="<?=base_url?>assets/adminlte/css/style.css">
+
+  <!-- include CKEditor library -->
+  <script src="<?=base_url?>assets/ckeditor/ckeditor.js" charset="utf-8"></script>
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

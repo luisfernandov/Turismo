@@ -45,9 +45,15 @@
                 <div class="row">
                   <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <label>Reseña(*): </label>
-                    <textarea class="form-control" name="descripcion" rows="10" cols="80" placeholder="Reseña"><?=isset($blog) && is_object($blog) ? $blog->descripcion : ''?></textarea>
+                    <textarea id="editor" class="form-control" name="descripcion" rows="10" cols="80" placeholder="Reseña"><?=isset($blog) && is_object($blog) ? $blog->descripcion : ''?></textarea>
                   </div>
                 </div>
+                <!-- <div class="row" id="editor">
+                  <div  class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    Escribe tus post...
+                  </div>
+                </div> -->
+
                 <div class="row">
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <label>Categoria:(*) </label>
